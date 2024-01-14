@@ -54,12 +54,13 @@ function Dashboard() {
             <Link to="/data-display">Data Display</Link>
           </li>
         </ul> */}
-        <ul className="flex items-center p-4 max-w-7xl my-4 mx-auto shadow-md rounded-xl h-20 bg-slate-100 space-x-28">
+        <ul className="flex items-center p-4 max-w-7xl my-4 mx-auto shadow-md rounded-xl h-20 bg-slate-100 space-x-20">
           {/* <h1 className="text-4xl text-blue-700 m-4">Dashboard</h1> */}
           <li className="ml-6"><Link to="/">Home</Link></li>
           <li><Link to="/project-creation">Project Creation</Link></li>
           {/* project management */}
           <li><Link to="/project-management">City Corporation</Link></li>
+          <li><Link to="/builder">Builder</Link> </li>
           <li><Link to="/installment-transfer">Installment Transfer</Link></li>
           <li><Link to="/funds-transfer">Funds Transfer</Link></li>
           <li><Link to="/data-display">Data Display</Link></li>

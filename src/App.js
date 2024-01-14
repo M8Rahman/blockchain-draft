@@ -6,6 +6,7 @@ import ProjectManagement from './ProjectManagement';
 import InstallmentTransfer from './InstallmentTransfer';
 import FundsTransfer from './FundsTransfer';
 import DataDisplay from './DataDisplay';
+import Builder from './Builder';
 // import Metamask from './Metamask';
 
 
@@ -20,7 +21,8 @@ function App() {
           <Route path="/project-management" element={<ProjectManagement/>} />
           <Route path="/installment-transfer" element={<InstallmentTransfer/>} />
           <Route path="/funds-transfer" element={<FundsTransfer/>} />
-          <Route path="/data-display" element={<DataDisplay/>} />
+          <Route path="/data-display" element={<DataDisplay/>} />          
+          <Route path="/builder" element={<Builder/>} />          
           {/* <Route path="/metamask" element={<Metamask/>} /> */}
         </Routes>
       </React.Fragment>
