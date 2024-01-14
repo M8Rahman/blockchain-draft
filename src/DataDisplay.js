@@ -20,6 +20,13 @@ function DataDisplay() {
           </li>
         ))}
       </ul>
+      <div>
+        <button className="">All Project</button>
+        <button className="">City Corporation</button>
+        <button>All Project Details</button>
+        <button>Projects</button>
+        <button>Treasury</button>
+      </div>
     </div>
   );
 }

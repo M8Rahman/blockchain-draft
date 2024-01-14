@@ -18,9 +18,9 @@ function FundsTransfer() {
       <h1>Funds Transfer to Builder</h1>
       <label>
         Funds Amount:
-        <input type="number" onChange={handleInputChange} />
+        <input className="ml-[19px] mb-2 border border-black" type="number" onChange={handleInputChange} />
       </label>
-      <button type="button" onClick={handleTransferFunds}>
+      <button className="text-black bg-sky-400 rounded-xl mt-4 h-8 w-[128px]" type="button" onClick={handleTransferFunds}>
         Transfer Funds to Builder
       </button>
     </div>

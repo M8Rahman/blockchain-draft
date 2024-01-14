@@ -31,28 +31,40 @@ import { Link } from 'react-router-dom';
 
 function Dashboard() {
   return (
-    <nav>
-      <h1>Dashboard</h1>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/project-creation">Project Creation</Link>
-        </li>
-        <li>
-          <Link to="/project-management">Project Management</Link>
-        </li>
-        <li>
-          <Link to="/installment-transfer">Installment Transfer</Link>
-        </li>
-        <li>
-          <Link to="/funds-transfer">Funds Transfer</Link>
-        </li>
-        <li>
-          <Link to="/data-display">Data Display</Link>
-        </li>
-      </ul>
+    <nav className="m-8">
+      <h1 className="text-4xl text-blue-700 m-4 ml-28">Dashboard</h1>
+      <div className="ml-8 ">
+        {/* <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/project-creation">Project Creation</Link>
+          </li>
+          <li>
+            <Link to="/project-management">Project Management</Link>
+          </li>
+          <li>
+            <Link to="/installment-transfer">Installment Transfer</Link>
+          </li>
+          <li>
+            <Link to="/funds-transfer">Funds Transfer</Link>
+          </li>
+          <li>
+            <Link to="/data-display">Data Display</Link>
+          </li>
+        </ul> */}
+        <ul className="flex items-center p-4 max-w-7xl my-4 mx-auto shadow-md rounded-xl bg-slate-100 space-x-28">
+          {/* <h1 className="text-4xl text-blue-700 m-4">Dashboard</h1> */}
+          <li className="ml-6"><Link to="/">Home</Link></li>
+          <li><Link to="/project-creation">Project Creation</Link></li>
+          {/* project management */}
+          <li><Link to="/project-management">City Corporation</Link></li>
+          <li><Link to="/installment-transfer">Installment Transfer</Link></li>
+          <li><Link to="/funds-transfer">Funds Transfer</Link></li>
+          <li><Link to="/data-display">Data Display</Link></li>
+        </ul>
+      </div>
     </nav>
   );
 }

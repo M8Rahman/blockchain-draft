@@ -16,13 +16,15 @@ function ProjectManagement() {
   return (
     <div>
       <h1>Project Management</h1>
-      <label>
-        City Corporation Address:
-        <input type="text" onChange={handleInputChange} />
-      </label>
-      <button type="button" onClick={handleSetCityCorporation}>
-        Set City Corporation
-      </button>
+      <form className="border-4 border-sky-500  m-2 p-4 w-2/5 ml-44 shadow-lg rounded-lg">
+        <label >
+          City Corporation Address:
+          <input type="text" onChange={handleInputChange} />
+        </label>
+        <button type="button" onClick={handleSetCityCorporation}>
+          Set City Corporation
+        </button>
+      </form>
     </div>
   );
 }
