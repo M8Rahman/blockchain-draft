@@ -12,7 +12,7 @@ function DataDisplay() {
 
   return (
     <div>
-      <h1>Data Display</h1>
+      <h1 className="text-4xl mb-5 ml-36">Data Display</h1>
       <ul>
         {projectData.map((project) => (
           <li key={project.projectID}>
@@ -21,11 +21,13 @@ function DataDisplay() {
         ))}
       </ul>
       <div>
-        <button className="">All Project</button>
-        <button className="">City Corporation</button>
-        <button>All Project Details</button>
-        <button>Projects</button>
-        <button>Treasury</button>
+        <form className="border-4 border-sky-500  p-4 m-3 w-3/5 ml-44 shadow-lg rounded-lg">
+          <button className="text-black mr-6 bg-sky-400 rounded-xl mt-4 h-14 w-[140px]">All Project</button>
+          <button className="text-black mr-6 bg-sky-400 rounded-xl mt-4 h-14 w-[140px]">City Corporation</button>
+          <button className="text-black mr-6 bg-sky-400 rounded-xl mt-4 h-14 w-[140px]">All Project Details</button>
+          <button className="text-black mr-6 bg-sky-400 rounded-xl mt-4 h-14 w-[140px]">Projects</button>
+          <button className="text-black mr-6 bg-sky-400 rounded-xl mt-4 h-14 w-[140px]">Treasury</button>
+        </form>
       </div>
     </div>
   );

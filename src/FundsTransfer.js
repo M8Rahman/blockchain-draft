@@ -15,14 +15,17 @@ function FundsTransfer() {
 
   return (
     <div>
-      <h1>Funds Transfer to Builder</h1>
-      <label>
-        Funds Amount:
-        <input className="ml-[19px] mb-2 border border-black" type="number" onChange={handleInputChange} />
-      </label>
-      <button className="text-black bg-sky-400 rounded-xl mt-4 h-8 w-[128px]" type="button" onClick={handleTransferFunds}>
-        Transfer Funds to Builder
-      </button>
+      <h1 className="text-4xl mb-5 ml-36">Funds Transfer to Builder</h1>
+      <form className="border-4 border-sky-500  m-2 p-4 w-2/5 ml-44 shadow-lg rounded-lg">
+        <label>
+          Funds Amount:
+          <input className="ml-[19px] mb-2 border border-black" type="number" onChange={handleInputChange} />
+        </label>
+        <br></br>
+        <button className="text-black bg-sky-400 rounded-xl mt-4 h-9 w-[188px]" type="button" onClick={handleTransferFunds}>
+          Transfer Funds to Builder
+        </button>
+      </form>
     </div>
   );
 }
