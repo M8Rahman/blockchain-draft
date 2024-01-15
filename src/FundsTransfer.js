@@ -17,6 +17,11 @@ function FundsTransfer() {
     <div>
       <h1 className="text-4xl mb-5 ml-36">Funds Transfer to Builder</h1>
       <form className="border-4 border-sky-500  m-2 p-4 w-2/5 ml-44 shadow-lg rounded-lg">
+        <label className="">
+          Project ID:
+          <input className="ml-[55px] mb-2 border border-black" type="text" name="id" onChange={handleInputChange} />
+        </label>
+        <br></br>
         <label>
           Funds Amount:
           <input className="ml-[19px] mb-2 border border-black" type="number" onChange={handleInputChange} />
