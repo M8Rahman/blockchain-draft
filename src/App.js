@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import ProjectCreation from './ProjectCreation';
-import ProjectManagement from './ProjectManagement';
+import CityCorporation from './CityCorporation';
+// import ProjectManagement from './ProjectManagement';
 import InstallmentTransfer from './InstallmentTransfer';
 import FundsTransfer from './FundsTransfer';
 import DataDisplay from './DataDisplay';
@@ -18,7 +19,7 @@ function App() {
         <Dashboard/>
         <Routes>
           <Route path="/project-creation" element={<ProjectCreation/>} />
-          <Route path="/project-management" element={<ProjectManagement/>} />
+          <Route path="/city-corporation" element={<CityCorporation/>} />
           <Route path="/installment-transfer" element={<InstallmentTransfer/>} />
           <Route path="/funds-transfer" element={<FundsTransfer/>} />
           <Route path="/data-display" element={<DataDisplay/>} />          

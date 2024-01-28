@@ -59,7 +59,7 @@ function Dashboard() {
           <li className="ml-6"><Link to="/">Home</Link></li>
           <li><Link to="/project-creation">Project Creation</Link></li>
           {/* project management */}
-          <li><Link to="/project-management">City Corporation</Link></li>
+          <li><Link to="/city-corporation">City Corporation</Link></li>
           <li><Link to="/builder">Builder</Link> </li>
           <li><Link to="/installment-transfer">Installment Transfer</Link></li>
           <li><Link to="/funds-transfer">Funds Transfer</Link></li>

@@ -297,9 +297,9 @@ const YOUR_CONTRACT_ABI = [
 
 const YOUR_CONTRACT_ADDRESS = '0x6Fb1906a96Af46fAC1eBe0fE022F0c7E96356ebd'; // Replace with your actual contract address
 
-const Builder = () => {
+function CityCorporation() {
   const [projectID, setProjectID] = useState('');
-  const [builderAddress, setBuilderAddress] = useState('');
+  const [cityCorporationAddress, setCityCorporationAddress] = useState('');
   const [web3, setWeb3] = useState(null);
   const [accounts, setAccounts] = useState([]);
   const [contract, setContract] = useState(null);
@@ -347,20 +347,20 @@ const Builder = () => {
   const handleInputChange = (e) => {
     if (e.target.name === 'id') {
       setProjectID(e.target.value);
-    } else if (e.target.name === 'builderAddress') {
-      setBuilderAddress(e.target.value);
+    } else if (e.target.name === 'cityCorporationAddress') {
+      setCityCorporationAddress(e.target.value);
     }
   };
 
-  const handleSetBuilder = async () => {
+  const handleSetCityCorporation = async () => {
     try {
       if (!web3) {
         console.error('Web3 not initialized.');
         return;
       }
 
-      if (!projectID || !builderAddress) {
-        console.error('Please fill in both Project ID and Builder Address.');
+      if (!projectID || !cityCorporationAddress) {
+        console.error('Please fill in both Project ID and City Corporation Address.');
         return;
       }
 
@@ -369,17 +369,17 @@ const Builder = () => {
         return;
       }
 
-      await contract.methods.setBuilder(projectID, builderAddress).send({ from: accounts[0] });
+      await contract.methods.setCityCorporation(projectID, cityCorporationAddress).send({ from: accounts[0] });
 
-      console.log('Builder set successfully!');
+      console.log('City Corporation set successfully!');
     } catch (error) {
-      console.error('Error setting Builder:', error);
+      console.error('Error setting City Corporation:', error);
     }
   };
 
   return (
     <div>
-      <h1 className="text-4xl mb-5 ml-36">Builder Project Management</h1>
+      <h1 className="text-4xl mb-5 ml-36">City Corporation Project Management</h1>
       <form className="border-4 border-sky-500 m-2 p-4 w-2/5 ml-44 shadow-lg rounded-lg">
         <label>
           Project ID:
@@ -387,16 +387,16 @@ const Builder = () => {
         </label>
         <br />
         <label>
-          Builder Address:
-          <input className="ml-[19px] mb-2 border border-black" type="text" name="builderAddress" onChange={handleInputChange} />
+          City Corporation Address:
+          <input className="ml-[19px] mb-2 border border-black" type="text" name="cityCorporationAddress" onChange={handleInputChange} />
         </label>
         <br />
-        <button className="text-black bg-sky-400 rounded-xl mt-4 h-10 w-[200px]" type="button" onClick={handleSetBuilder}>
-          Set Builder
+        <button className="text-black bg-sky-400 rounded-xl mt-4 h-10 w-[200px]" type="button" onClick={handleSetCityCorporation}>
+          Set City Corporation
         </button>
       </form>
     </div>
   );
-};
+}
 
-export default Builder;
+export default CityCorporation;
