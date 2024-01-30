@@ -367,23 +367,48 @@ function InstallmentTransfer() {
 
   return (
     <div>
-      <form className="border-4 border-sky-500 m-2 p-4 w-2/5 ml-44 shadow-lg rounded-lg">
-        <h1 className="text-4xl mb-5 ml-36">Installment Transfer</h1>
-        <label>
+		{/* <h1 className="text-4xl mb-5 ml-36">Installment Transfer</h1> */}
+      	{/* <form className="border-4 border-white-950 bg-slate-400 m-2 p-4 w-2/5 ml-[425px] shadow-lg rounded-lg font-bold text-[16px] mt-[150px]">
+        <div className='mt-8'>
+		<label className='rounded-md ml-24'>
           Project ID:
-          <input className="ml-[90px] mb-2 border border-black" type="text" name="id" onChange={handleInputChange} />
+          <input className="ml-[96px] mb-2 border border-black" type="text" name="id" onChange={handleInputChange} />
         </label>
-        <br />
-        <label>
+		</div>
+        <label className='rounded-md ml-24'>
           Installment Amount:
           <input className="ml-[19px] mb-2 border border-black" type="number" name="installmentAmount" onChange={handleInputChange} />
         </label>
         <br />
-        <button className="text-black bg-sky-400 rounded-xl h-10 mt-4 w-[180px]" type="button" onClick={handleTransferInstallment}>
+        <button className="text-black hover:text-white bg-green-400 p-1 hover:bg-green-800 rounded-xl mt-8 mb-4 h-10 w-[200px] ml-48" type="button" onClick={handleTransferInstallment}>
           Transfer Installment
         </button>
-      </form>
-    </div>
+      </form> */}
+	  <div
+		class="transform transition duration-300 hover:scale-110 rounded-lg shadow-lg h-96  hover:shadow-xl bg-white ml-[440px] w-2/5 mt-20"
+		>
+		<div
+			class="bg-gradient-to-br from-rose-100 via-purple-200 to-purple-200 m-2 pt-4 h-5/6 rounded-lg">
+		<form>
+        <div className='pt-8 pb-2 ml-24'>
+		<label className='font-semibold text-[16px] font-serif'>
+          Project ID:
+          <input className='ml-[116px] bg-black text-white' type="text" name="id" onChange={handleInputChange} />
+        </label>
+		</div>
+        <label className='ml-24 font-semibold text-[16px] font-serif'>
+          Installment Amount:
+          <input className='ml-8 bg-black text-white' type="number" name="installmentAmount" onChange={handleInputChange} />
+        </label>
+        <br/>
+        <button className="text-black hover:text-white bg-green-400 p-1 hover:bg-green-800 rounded-xl mt-8 mb-4 h-10 w-[200px] ml-48 font-semibold font-serif text-6" type="button" onClick={handleTransferInstallment}>
+          Transfer Installment
+        </button>
+		</form>
+		</div>
+		</div>
+	</div>
+
   );
 }
 

@@ -421,45 +421,45 @@ function DataDisplay() {
 
   return (
     <div>
-      <h1 className="text-4xl mb-5 ml-36">Data Display</h1>
+      {/* <h1 className="text-4xl mb-5 ml-36">Data Display</h1> */}
       {isConnected ? (
         <>
           <button
-            className="text-black mr-6 bg-sky-400 rounded-xl mt-4 h-14 w-[140px]"
+            className="text-black hover:text-white bg-green-400 p-1 hover:bg-green-800 rounded-xl mt-8 mb-4 h-10 w-[200px] ml-48 font-bold text-[16px]"
             onClick={handleGetAllProjectDetails}
           >
             All Project Details
           </button>
-          <table className="table-auto ml-36 mt-4">
+          <table className="table-auto ml-36 mt-4 border-separate border-spacing-2 border border-slate-50">
             <thead>
               <tr>
-                <th className="border px-4 py-2">Project ID</th>
-                <th className="border px-4 py-2">Finance Ministry</th>
-                <th className="border px-4 py-2">Treasury</th>
-                <th className="border px-4 py-2">City Corporation</th>
-                <th className="border px-4 py-2">Builder</th>
-                <th className="border px-4 py-2">Project Name</th>
-                <th className="border px-4 py-2">Project Area</th>
-                <th className="border px-4 py-2">Allocated Budget</th>
-                <th className="border px-4 py-2">Funds Sent to City Corporation</th>
-                <th className="border px-4 py-2">Funds Sent to Builder</th>
-                <th className="border px-4 py-2">Installment Number</th>
+                <th className="border border-slate-800 bg-sky-400 px-4 py-2">Project ID</th>
+                <th className="border border-slate-800 bg-white px-4 py-2">Finance Ministry</th>
+                <th className="border border-slate-800 bg-sky-400 px-4 py-2">Treasury</th>
+                <th className="border border-slate-800 bg-white px-4 py-2">City Corporation</th>
+                <th className="border border-slate-800 bg-sky-400 px-4 py-2">Builder</th>
+                <th className="border border-slate-800 bg-white px-4 py-2">Project Name</th>
+                <th className="border border-slate-800 bg-sky-400 px-4 py-2">Project Area</th>
+                <th className="border border-slate-800 bg-white px-4 py-2">Allocated Budget</th>
+                <th className="border border-slate-800 bg-sky-400 px-4 py-2">Funds Sent to City Corporation</th>
+                <th className="border border-slate-800 bg-white px-4 py-2">Funds Sent to Builder</th>
+                <th className="border border-slate-800 bg-sky-400 px-4 py-2">Installment Number</th>
               </tr>
             </thead>
             <tbody>
               {projectData.map((project) => (
                 <tr key={project.projectID}>
-                  <td className="border px-4 py-2">{project.projectID}</td>
-                  <td className="border px-4 py-2">{project.financeMinistry}</td>
-                  <td className="border px-4 py-2">{project.treasury}</td>
-                  <td className="border px-4 py-2">{project.cityCorporation}</td>
-                  <td className="border px-4 py-2">{project.builder}</td>
-                  <td className="border px-4 py-2">{project.projectName}</td>
-                  <td className="border px-4 py-2">{project.projectArea}</td>
-                  <td className="border px-4 py-2">{project.allocatedBudget}</td>
-                  <td className="border px-4 py-2">{project.fundsSentToCityCorporation}</td>
-                  <td className="border px-4 py-2">{project.fundsSentToBuilder}</td>
-                  <td className="border px-4 py-2">{project.installmentNumber}</td>
+                  <td className="border border-slate-800 bg-white px-4 py-2">{project.projectID}</td>
+                  <td className="border border-slate-800 bg-sky-400 px-4 py-2">{project.financeMinistry}</td>
+                  <td className="border border-slate-800 bg-white px-4 py-2">{project.treasury}</td>
+                  <td className="border border-slate-800 bg-sky-400 px-4 py-2">{project.cityCorporation}</td>
+                  <td className="border border-slate-800 bg-white px-4 py-2">{project.builder}</td>
+                  <td className="border border-slate-800 bg-sky-400 px-4 py-2">{project.projectName}</td>
+                  <td className="border border-slate-800 bg-white px-4 py-2">{project.projectArea}</td>
+                  <td className="border border-slate-800 bg-sky-400 px-4 py-2">{project.allocatedBudget}</td>
+                  <td className="border border-slate-800 bg-white px-4 py-2">{project.fundsSentToCityCorporation}</td>
+                  <td className="border border-slate-800 bg-sky-400 px-4 py-2">{project.fundsSentToBuilder}</td>
+                  <td className="border border-slate-800 bg-white px-4 py-2">{project.installmentNumber}</td>
                 </tr>
               ))}
             </tbody>
@@ -473,7 +473,7 @@ function DataDisplay() {
       />
 
       {/* Sorting buttons */}
-      <div className="mb-4">
+      {/* <div className="mb-4">
         <button className="mr-4" onClick={() => handleSortChange('budget')}>
           Sort by Budget
         </button>
@@ -486,7 +486,7 @@ function DataDisplay() {
         <button onClick={() => handleSortChange('fundsSentToBuilder')}>
           Sort by Funds Sent to Builder
         </button>
-      </div>
+      </div> */}
         </>
       ) : (
         <p>Please connect to MetaMask.</p>

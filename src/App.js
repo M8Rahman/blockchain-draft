@@ -8,6 +8,7 @@ import InstallmentTransfer from './InstallmentTransfer';
 import FundsTransfer from './FundsTransfer';
 import DataDisplay from './DataDisplay';
 import Builder from './Builder';
+import Home from './Home';
 // import Metamask from './Metamask';
 
 
@@ -18,6 +19,7 @@ function App() {
         {/* {!isLoginPage && <Navbar />} */}
         <Dashboard/>
         <Routes>
+          <Route path='/Home' element={<Home></Home>}></Route>
           <Route path="/project-creation" element={<ProjectCreation/>} />
           <Route path="/city-corporation" element={<CityCorporation/>} />
           <Route path="/installment-transfer" element={<InstallmentTransfer/>} />

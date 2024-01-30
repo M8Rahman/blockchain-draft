@@ -379,19 +379,20 @@ const Builder = () => {
 
   return (
     <div>
-      <h1 className="text-4xl mb-5 ml-36">Builder Project Management</h1>
-      <form className="border-4 border-sky-500 m-2 p-4 w-2/5 ml-44 shadow-lg rounded-lg">
-        <label>
+      {/* <h1 className="text-4xl mb-5 ml-36">Builder Project Management</h1> */}
+      <form className="border-4 border-white-950 bg-slate-400 m-2 p-4 w-2/5 ml-[425px] shadow-lg rounded-lg font-bold text-[16px] mt-[150px]">
+        <div className='mt-8'>
+		<label className='ml-24'>
           Project ID:
           <input className="ml-[128px] mb-2 border border-black" type="text" name="id" onChange={handleInputChange} />
         </label>
-        <br />
-        <label>
+		</div>
+        <label className='ml-24'>
           Builder Address:
-          <input className="ml-[19px] mb-2 border border-black" type="text" name="builderAddress" onChange={handleInputChange} />
+          <input className="ml-[85px] mb-2 border border-black" type="text" name="builderAddress" onChange={handleInputChange} />
         </label>
         <br />
-        <button className="text-black bg-sky-400 rounded-xl mt-4 h-10 w-[200px]" type="button" onClick={handleSetBuilder}>
+        <button className="text-black hover:text-white bg-green-400 p-1 hover:bg-green-800 rounded-xl mt-8 mb-4 h-10 w-[200px] ml-48" type="button" onClick={handleSetBuilder}>
           Set Builder
         </button>
       </form>
