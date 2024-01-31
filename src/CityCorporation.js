@@ -378,25 +378,52 @@ function CityCorporation() {
   };
 
   return (
-    <div>
-      {/* <h1 className="text-3xl font-semibold mt-32 mb-5 ml-96">City Corporation Project Management</h1> */}
-      <form className='border-4 border-white-950 bg-slate-400 m-2 p-4 w-2/5 ml-[425px] shadow-lg rounded-lg font-bold text-[16px] mt-32'>
-        <div className='mt-4'>
-		<label className='ml-24 mt-20'>
-          Project ID:
-          <input className="ml-[135px] mb-2 border border-black rounded-md" type="text" name="id" onChange={handleInputChange} />
+    // <div>
+    //   {/* <h1 className="text-3xl font-semibold mt-32 mb-5 ml-96">City Corporation Project Management</h1> */}
+    //   <form className='border-4 border-white-950 bg-slate-400 m-2 p-4 w-2/5 ml-[425px] shadow-lg rounded-lg font-bold text-[16px] mt-32'>
+    //     <div className='mt-4'>
+	// 	<label className='ml-24 mt-20'>
+    //       Project ID:
+    //       <input className="ml-[135px] mb-2 border border-black rounded-md" type="text" name="id" onChange={handleInputChange} />
+    //     </label>
+	// 	</div>
+    //     <label className='ml-24'>
+    //       City Corporation Address:
+    //       <input className="ml-[19px] mb-2 border border-black rounded-md" type="text" name="cityCorporationAddress" onChange={handleInputChange} />
+    //     </label>
+    //     <br />
+    //     <button className="text-black hover:text-white bg-green-400 p-1 hover:bg-green-800 rounded-xl mt-8 mb-4 h-10 w-[200px] ml-48" type="button" onClick={handleSetCityCorporation}>
+    //       Set City Corporation
+    //     </button>
+    //   </form>
+    // </div>
+	<div class="card1 m-auto">
+		<form>
+        <div className='ml-24 pb-4'>
+		<label className='flex'>
+          <div>
+		  <input className="project bg-transparent ml-20" placeholder='Project ID' type="text" name="cityCorporationAddress" onChange={handleInputChange} />
+		  <hr className='ml-20 mt-1' />
+		  </div>
         </label>
 		</div>
-        <label className='ml-24'>
-          City Corporation Address:
-          <input className="ml-[19px] mb-2 border border-black rounded-md" type="text" name="cityCorporationAddress" onChange={handleInputChange} />
+        <label className='ml-24 flex'>
+          <div>
+			<input className="bg-transparent ml-20" placeholder='City Corporation Address' type="text" name="builderAddress" onChange={handleInputChange} />
+			<hr className='ml-20 mt-1'/>
+		  </div>
         </label>
         <br />
-        <button className="text-black hover:text-white bg-green-400 p-1 hover:bg-green-800 rounded-xl mt-8 mb-4 h-10 w-[200px] ml-48" type="button" onClick={handleSetCityCorporation}>
-          Set City Corporation
-        </button>
+        {/* <button className="text-black hover:text-white bg-green-400 p-1 hover:bg-green-800 rounded-xl mt-8 mb-4 h-10 w-[200px] ml-" type="button" onClick={handleSetBuilder}>
+          Set Builder
+        </button> */}
+		<div className='flex justify-center ml-16'>
+		<button className="shadow__btn ml-28" type="button" onClick={handleSetCityCorporation}>
+			Set City Corporation
+		</button >
+		</div>
       </form>
-    </div>
+	</div>
   );
 }
 

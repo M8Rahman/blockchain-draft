@@ -9,12 +9,14 @@ import FundsTransfer from './FundsTransfer';
 import DataDisplay from './DataDisplay';
 import Builder from './Builder';
 import Home from './Home';
+import './Builder.css'
 // import Metamask from './Metamask';
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <div style={{backgroundImage:'url("")'}}>
+      <BrowserRouter>
       <React.Fragment>
         {/* {!isLoginPage && <Navbar />} */}
         <Dashboard/>
@@ -30,6 +32,8 @@ function App() {
         </Routes>
       </React.Fragment>
     </BrowserRouter>
+    </div>
+    
   );
 }
 

@@ -30,3 +30,8 @@
   }
 }
 
+/* *{
+  background-image: url('./images/bg.jpg');
+  overflow: hidden;
+  background-size: cover;
+} */

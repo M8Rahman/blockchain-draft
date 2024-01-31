@@ -55,9 +55,9 @@ function Dashboard() {
             <Link to="/data-display">Data Display</Link>
           </li>
         </ul> */}
-        <ul className="flex items-center p-4 max-w-7xl my-4 mx-auto shadow-2xl rounded-3xl h-20 text-white bg-slate-800">
+        <ul className="flex items-center p-4 max-w-7xl my-4 mx-auto shadow-2xl  h-20 text-white bg-slate-800">
 
-        <div className='text-4xl font-bold text-gradient-to-r from-indigo-500 text-purple-500 mr-52'>GovtChain</div>
+        <div className='text-4xl font-bold text-gradient-to-r from-indigo-500 mr-52'>GovtChain</div>
 
         <div className='flex space-x-3 rounded-xl text-white'>
             {/* <h1 className="text-4xl text-blue-700 m-4">Dashboard</h1> */}
