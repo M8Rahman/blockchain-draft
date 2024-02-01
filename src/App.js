@@ -15,7 +15,8 @@ function App() {
   return (
     <BrowserRouter>
     <Dashboard/>
-      {/* <ParticleHTML />Render the ParticleHTML component */}
+      <ParticleHTML/>
+      {/* Render the ParticleHTML component */}
       <Routes>
         <Route path='/Home' element={<Home/>}></Route>
         <Route path="/project-creation" element={<ProjectCreation/>} />

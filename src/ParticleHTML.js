@@ -123,7 +123,7 @@ const ParticleHTML = () => {
   }, []);
 
   return (
-    <div id="particles-js" style={{ position: 'absolute', width: '100%', height: '100%', backgroundColor: '#000' }} />
+    <div id="particles-js" style={{ position: 'absolute', width: '1500px', height: '100%', backgroundColor: '#000' }} />
   );
 }
 
