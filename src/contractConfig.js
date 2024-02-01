@@ -293,5 +293,5 @@ export const YOUR_CONTRACT_ABI = [
 	}
 ];
   
-  export const YOUR_CONTRACT_ADDRESS = '0x6Fb1906a96Af46fAC1eBe0fE022F0c7E96356ebd'; // Your contract address
+  export const YOUR_CONTRACT_ADDRESS = '0x67D45C3a3C61Ec570a9fCaFBa00f38FD01e84fD5'; // Your contract address
   

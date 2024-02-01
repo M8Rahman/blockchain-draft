@@ -1,301 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
+import { YOUR_CONTRACT_ABI, YOUR_CONTRACT_ADDRESS } from './contractConfig';
 
-const YOUR_CONTRACT_ABI = [
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_budget",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_id",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_area",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "_treasury",
-				"type": "address"
-			}
-		],
-		"name": "allocateBudget",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_id",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "sendFundsToBuilder",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_id",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "sendInstallment",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_id",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "_builder",
-				"type": "address"
-			}
-		],
-		"name": "setBuilder",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_id",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "_cityCorporation",
-				"type": "address"
-			}
-		],
-		"name": "setCityCorporation",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "allProjectIDs",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"name": "cityCorporationToBuilder",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getAllProjectDetails",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "string",
-						"name": "projectID",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "financeMinistry",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "treasury",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "cityCorporation",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "builder",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "projectName",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "projectArea",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "allocatedBudget",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "fundsSentToCityCorporation",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "fundsSentToBuilder",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "installmentNumber",
-						"type": "uint256"
-					}
-				],
-				"internalType": "struct GovernmentFundManagement.ProjectSummary[]",
-				"name": "",
-				"type": "tuple[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"name": "projects",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "allocatedBudget",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "financeMinistry",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "treasury",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "cityCorporation",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "builder",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "projectID",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "projectName",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "projectArea",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "installmentNumber",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"name": "treasuryToCityCorporation",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	}
-];
-
-const YOUR_CONTRACT_ADDRESS = '0x6Fb1906a96Af46fAC1eBe0fE022F0c7E96356ebd'; // Replace with your actual contract address
 
 function CityCorporation() {
   const [projectID, setProjectID] = useState('');
@@ -378,52 +84,31 @@ function CityCorporation() {
   };
 
   return (
-    // <div>
-    //   {/* <h1 className="text-3xl font-semibold mt-32 mb-5 ml-96">City Corporation Project Management</h1> */}
-    //   <form className='border-4 border-white-950 bg-slate-400 m-2 p-4 w-2/5 ml-[425px] shadow-lg rounded-lg font-bold text-[16px] mt-32'>
-    //     <div className='mt-4'>
-	// 	<label className='ml-24 mt-20'>
-    //       Project ID:
-    //       <input className="ml-[135px] mb-2 border border-black rounded-md" type="text" name="id" onChange={handleInputChange} />
-    //     </label>
-	// 	</div>
-    //     <label className='ml-24'>
-    //       City Corporation Address:
-    //       <input className="ml-[19px] mb-2 border border-black rounded-md" type="text" name="cityCorporationAddress" onChange={handleInputChange} />
-    //     </label>
-    //     <br />
-    //     <button className="text-black hover:text-white bg-green-400 p-1 hover:bg-green-800 rounded-xl mt-8 mb-4 h-10 w-[200px] ml-48" type="button" onClick={handleSetCityCorporation}>
-    //       Set City Corporation
-    //     </button>
-    //   </form>
-    // </div>
-	<div class="card1 m-auto">
-		<form>
-        <div className='ml-24 pb-4'>
+	<div className="card1 m-auto">
+	<form>
+		<div className='ml-24 pb-4'>
 		<label className='flex'>
-          <div>
-		  <input className="project bg-transparent ml-20" placeholder='Project ID' type="text" name="cityCorporationAddress" onChange={handleInputChange} />
-		  <hr className='ml-20 mt-1' />
-		  </div>
-        </label>
+			<div>
+			<input className="project bg-transparent ml-20" placeholder='Project ID' type="text" name="id" onChange={handleInputChange} />
+			<hr className='ml-20 mt-1' />
+			</div>
+		</label>
 		</div>
-        <label className='ml-24 flex'>
-          <div>
-			<input className="bg-transparent ml-20" placeholder='City Corporation Address' type="text" name="builderAddress" onChange={handleInputChange} />
+		<label className='ml-24 flex'>
+		<div>
+			<input className="bg-transparent ml-20" placeholder='City Corporation Address' type="text" name="cityCorporationAddress" onChange={handleInputChange} />
 			<hr className='ml-20 mt-1'/>
-		  </div>
-        </label>
-        <br />
-        {/* <button className="text-black hover:text-white bg-green-400 p-1 hover:bg-green-800 rounded-xl mt-8 mb-4 h-10 w-[200px] ml-" type="button" onClick={handleSetBuilder}>
-          Set Builder
-        </button> */}
+		</div>
+		</label>
+		<br />
 		<div className='flex justify-center ml-16'>
 		<button className="shadow__btn ml-28" type="button" onClick={handleSetCityCorporation}>
 			Set City Corporation
 		</button >
 		</div>
-      </form>
+	</form>
 	</div>
+
   );
 }
 

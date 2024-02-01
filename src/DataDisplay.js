@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
+import { YOUR_CONTRACT_ABI, YOUR_CONTRACT_ADDRESS } from './contractConfig';
+
 
 function DataDisplay() {
   const [web3, setWeb3] = useState(null);
@@ -37,304 +39,8 @@ function DataDisplay() {
   }, []);
 
   useEffect(() => {
-    const contractABI = [
-      {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "_budget",
-            "type": "uint256"
-          },
-          {
-            "internalType": "string",
-            "name": "_id",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "_name",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "_area",
-            "type": "string"
-          },
-          {
-            "internalType": "address",
-            "name": "_treasury",
-            "type": "address"
-          }
-        ],
-        "name": "allocateBudget",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "string",
-            "name": "_id",
-            "type": "string"
-          },
-          {
-            "internalType": "uint256",
-            "name": "_amount",
-            "type": "uint256"
-          }
-        ],
-        "name": "sendFundsToBuilder",
-        "outputs": [],
-        "stateMutability": "payable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "string",
-            "name": "_id",
-            "type": "string"
-          },
-          {
-            "internalType": "uint256",
-            "name": "_amount",
-            "type": "uint256"
-          }
-        ],
-        "name": "sendInstallment",
-        "outputs": [],
-        "stateMutability": "payable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "string",
-            "name": "_id",
-            "type": "string"
-          },
-          {
-            "internalType": "address",
-            "name": "_builder",
-            "type": "address"
-          }
-        ],
-        "name": "setBuilder",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "string",
-            "name": "_id",
-            "type": "string"
-          },
-          {
-            "internalType": "address",
-            "name": "_cityCorporation",
-            "type": "address"
-          }
-        ],
-        "name": "setCityCorporation",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "name": "allProjectIDs",
-        "outputs": [
-          {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-          }
-        ],
-        "name": "cityCorporationToBuilder",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "inputs": [],
-        "name": "getAllProjectDetails",
-        "outputs": [
-          {
-            "components": [
-              {
-                "internalType": "string",
-                "name": "projectID",
-                "type": "string"
-              },
-              {
-                "internalType": "address",
-                "name": "financeMinistry",
-                "type": "address"
-              },
-              {
-                "internalType": "address",
-                "name": "treasury",
-                "type": "address"
-              },
-              {
-                "internalType": "address",
-                "name": "cityCorporation",
-                "type": "address"
-              },
-              {
-                "internalType": "address",
-                "name": "builder",
-                "type": "address"
-              },
-              {
-                "internalType": "string",
-                "name": "projectName",
-                "type": "string"
-              },
-              {
-                "internalType": "string",
-                "name": "projectArea",
-                "type": "string"
-              },
-              {
-                "internalType": "uint256",
-                "name": "allocatedBudget",
-                "type": "uint256"
-              },
-              {
-                "internalType": "uint256",
-                "name": "fundsSentToCityCorporation",
-                "type": "uint256"
-              },
-              {
-                "internalType": "uint256",
-                "name": "fundsSentToBuilder",
-                "type": "uint256"
-              },
-              {
-                "internalType": "uint256",
-                "name": "installmentNumber",
-                "type": "uint256"
-              }
-            ],
-            "internalType": "struct GovernmentFundManagement.ProjectSummary[]",
-            "name": "",
-            "type": "tuple[]"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-          }
-        ],
-        "name": "projects",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "allocatedBudget",
-            "type": "uint256"
-          },
-          {
-            "internalType": "address",
-            "name": "financeMinistry",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "treasury",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "cityCorporation",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "builder",
-            "type": "address"
-          },
-          {
-            "internalType": "string",
-            "name": "projectID",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "projectName",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "projectArea",
-            "type": "string"
-          },
-          {
-            "internalType": "uint256",
-            "name": "installmentNumber",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-          }
-        ],
-        "name": "treasuryToCityCorporation",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-      }
-    ];
-
-    const contractAddress = '0x6Fb1906a96Af46fAC1eBe0fE022F0c7E96356ebd'; // Replace with your actual contract address
-
     if (web3) {
-      const contractInstance = new web3.eth.Contract(contractABI, contractAddress);
+      const contractInstance = new web3.eth.Contract(YOUR_CONTRACT_ABI, YOUR_CONTRACT_ADDRESS);
       setContract(contractInstance);
     }
   }, [web3]);
@@ -430,63 +136,56 @@ function DataDisplay() {
           >
             All Project Details
           </button>
-          <table className="table-auto ml-36 mt-4 border-separate border-spacing-2 border border-slate-50">
+          {/* <table className="table-auto mt-4 border-separate border-spacing-2 border border-slate-50"> */}
+          <table className="table-auto mt-4 border-separate border-spacing-2 border border-slate-50 w-full">
             <thead>
-              <tr>
-                <th className="border border-slate-800 bg-sky-400 px-4 py-2">Project ID</th>
-                <th className="border border-slate-800 bg-white px-4 py-2">Finance Ministry</th>
-                <th className="border border-slate-800 bg-sky-400 px-4 py-2">Treasury</th>
-                <th className="border border-slate-800 bg-white px-4 py-2">City Corporation</th>
-                <th className="border border-slate-800 bg-sky-400 px-4 py-2">Builder</th>
-                <th className="border border-slate-800 bg-white px-4 py-2">Project Name</th>
-                <th className="border border-slate-800 bg-sky-400 px-4 py-2">Project Area</th>
-                <th className="border border-slate-800 bg-white px-4 py-2">Allocated Budget</th>
-                <th className="border border-slate-800 bg-sky-400 px-4 py-2">Funds Sent to City Corporation</th>
-                <th className="border border-slate-800 bg-white px-4 py-2">Funds Sent to Builder</th>
-                <th className="border border-slate-800 bg-sky-400 px-4 py-2">Installment Number</th>
-              </tr>
+            <tr>
+              <th className="border border-slate-800 bg-sky-400 px-4 py-2">Project ID</th>
+              <th className="border border-slate-800 bg-white px-4 py-2" colSpan="4">Ethereum Wallet Addresses</th>
+              <th className="border border-slate-800 bg-sky-400 px-4 py-2">Project Name</th>
+              <th className="border border-slate-800 bg-white px-4 py-2">Project Area</th>
+              <th className="border border-slate-800 bg-sky-400 px-4 py-2">Allocated Budget</th>
+              <th className="border border-slate-800 bg-white px-4 py-2">Funds Sent to City Corporation</th>
+              <th className="border border-slate-800 bg-sky-400 px-4 py-2">Funds Sent to Builder</th>
+              <th className="border border-slate-800 bg-white px-4 py-2">Installment Number</th>
+            </tr>
             </thead>
             <tbody>
               {projectData.map((project) => (
                 <tr key={project.projectID}>
                   <td className="border border-slate-800 bg-white px-4 py-2">{project.projectID}</td>
-                  <td className="border border-slate-800 bg-sky-400 px-4 py-2">{project.financeMinistry}</td>
-                  <td className="border border-slate-800 bg-white px-4 py-2">{project.treasury}</td>
-                  <td className="border border-slate-800 bg-sky-400 px-4 py-2">{project.cityCorporation}</td>
-                  <td className="border border-slate-800 bg-white px-4 py-2">{project.builder}</td>
-                  <td className="border border-slate-800 bg-sky-400 px-4 py-2">{project.projectName}</td>
-                  <td className="border border-slate-800 bg-white px-4 py-2">{project.projectArea}</td>
-                  <td className="border border-slate-800 bg-sky-400 px-4 py-2">{project.allocatedBudget}</td>
-                  <td className="border border-slate-800 bg-white px-4 py-2">{project.fundsSentToCityCorporation}</td>
-                  <td className="border border-slate-800 bg-sky-400 px-4 py-2">{project.fundsSentToBuilder}</td>
-                  <td className="border border-slate-800 bg-white px-4 py-2">{project.installmentNumber}</td>
+                  {/* <td className="border border-slate-800 px-4 py-2" colSpan="4">
+                    <div style={{ backgroundColor: 'white' }} className="truncate">FinanceM: {project.financeMinistry}</div>
+                    <div style={{ backgroundColor: 'sky' }} className="truncate">Treaury: {project.treasury}</div>
+                    <div style={{ backgroundColor: 'white' }} className="truncate">CityCorp: {project.cityCorporation}</div>
+                    <div style={{ backgroundColor: 'sky' }} className="truncate">Builder: {project.builder}</div>
+                  </td> */}
+                  <td className="border border-slate-800 bg-gray-200 px-4 py-2" colSpan="4">
+                    <div style={{ backgroundColor:'#f0f0f0' }}>
+                      <strong>FinanceM:</strong> {project.financeMinistry}
+                    </div>
+                    <div style={{ backgroundColor:'#ffffff' }}>
+                      <strong>Treasury:</strong> {project.treasury}
+                    </div>
+                    <div style={{ backgroundColor:'#f0f0f0' }}>
+                      <strong>CityCorp:</strong> {project.cityCorporation}
+                    </div>
+                    <div style={{ backgroundColor:'#ffffff' }}>
+                      <strong>Builder:</strong> {project.builder}
+                    </div>
+                  </td>
+                  <td className="border border-slate-800 bg-sky-400 px-4 py-2" style={{ width: '120px' }}>{project.projectName}</td>
+                  <td className="border border-slate-800 bg-white px-4 py-2" style={{ width: '120px' }}>{project.projectArea}</td>
+                  <td className="border border-slate-800 bg-sky-400 px-4 py-2" style={{ width: '120px' }}>{project.allocatedBudget}</td>
+                  <td className="border border-slate-800 bg-white px-4 py-2" style={{ width: '120px' }}>{project.fundsSentToCityCorporation}</td>
+                  <td className="border border-slate-800 bg-sky-400 px-4 py-2" style={{ width: '120px' }}>{project.fundsSentToBuilder}</td>
+                  <td className="border border-slate-800 bg-white px-4 py-2" style={{ width: '120px' }}>{project.installmentNumber}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <input
-        type="text"
-        placeholder="Search..."
-        value={searchTerm}
-        onChange={handleSearchChange}
-        className="border p-2 mt-4 mb-4"
-      />
-
-      {/* Sorting buttons */}
-      {/* <div className="mb-4">
-        <button className="mr-4" onClick={() => handleSortChange('budget')}>
-          Sort by Budget
-        </button>
-        <button className="mr-4" onClick={() => handleSortChange('installmentNumber')}>
-          Sort by Installment Number
-        </button>
-        <button className="mr-4" onClick={() => handleSortChange('fundsSentToCityCorporation')}>
-          Sort by Funds Sent to City Corporation
-        </button>
-        <button onClick={() => handleSortChange('fundsSentToBuilder')}>
-          Sort by Funds Sent to Builder
-        </button>
-      </div> */}
+          
+      
         </>
       ) : (
         <p>Please connect to MetaMask.</p>

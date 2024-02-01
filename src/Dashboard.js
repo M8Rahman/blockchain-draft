@@ -59,7 +59,7 @@ function Dashboard() {
 
         <div className='text-4xl font-bold text-gradient-to-r from-indigo-500 mr-52'>GovtChain</div>
 
-        <div className='flex space-x-3 rounded-xl text-white'>
+        <div className='flex space-x-2 rounded-xl text-white'>
             {/* <h1 className="text-4xl text-blue-700 m-4">Dashboard</h1> */}
             {/* <li className= "pl-1 pr-1 hover:bg-violet-600 hover: text active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-xl"><Link to="/">Home</Link></li> */}{/* <li><Link to="/">Home</Link></li> */}
             {/* <li><Link to={Home}>Home</Link></li> */}
