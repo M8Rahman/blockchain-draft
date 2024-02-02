@@ -130,12 +130,17 @@ function DataDisplay() {
       {/* <h1 className="text-4xl mb-5 ml-36">Data Display</h1> */}
       {isConnected ? (
         <>
-          <button
+          {/* <button
             className="text-black hover:text-white bg-green-400 p-1 hover:bg-green-800 rounded-xl mt-8 mb-4 h-10 w-[200px] ml-48 font-bold text-[16px]"
             onClick={handleGetAllProjectDetails}
           >
             All Project Details
-          </button>
+          </button> */}
+          
+          <button className="shadow__btn ml-16" type="button" onClick={handleGetAllProjectDetails}>
+              Set Builder
+          </button >
+
           {/* <table className="table-auto mt-4 border-separate border-spacing-2 border border-slate-50"> */}
           <table className="table-auto mt-4 border-separate border-spacing-2 border border-slate-50 w-full">
             <thead>

@@ -13,9 +13,10 @@ import './Builder.css';
 
 function App() {
   return (
+    
     <BrowserRouter>
     <Dashboard/>
-      <ParticleHTML/>
+      {/* <ParticleHTML/> */}
       {/* Render the ParticleHTML component */}
       <Routes>
         <Route path='/Home' element={<Home/>}></Route>
@@ -28,6 +29,7 @@ function App() {
         {/* <Route path="/metamask" element={<Metamask/>} /> */}
       </Routes>
     </BrowserRouter>
+    
   );
 }
 

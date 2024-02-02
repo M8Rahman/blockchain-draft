@@ -96,7 +96,7 @@ function ProjectCreation() {
         // </button>
         <button className="shadow__btn ml-16" type="button" onClick={() => setIsConnected(true)}>
     		  Connect to MetaMask
-		    </button >
+		    </button>
       ) : (
         // <div className='border-4 border-white-950 bg-slate-400 m-2 p-4 w-2/5 ml-[425px] shadow-lg rounded-lg font-bold text-[16px] mt-[128px]'>
         //   <div className='mt-8'>
