@@ -138,7 +138,7 @@ function DataDisplay() {
           </button> */}
           
           <button className="shadow__btn ml-16" type="button" onClick={handleGetAllProjectDetails}>
-              Set Builder
+              All Project Details
           </button >
 
           {/* <table className="table-auto mt-4 border-separate border-spacing-2 border border-slate-50"> */}
