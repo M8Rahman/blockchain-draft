@@ -75,8 +75,3 @@ Ensure the following are installed on your system:
 - **Multi-Signature Wallets** for fund approvals.
 - **Machine Learning** to detect fraudulent activities.
 
-## License
-This project is licensed under the MIT License.
-
----
-For any queries, contact [Your Email/LinkedIn/GitHub].
